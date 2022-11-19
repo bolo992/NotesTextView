@@ -52,6 +52,12 @@ extension UIColor {
         }
     }()
     
+    static var FETextEmailBlue: UIColor = {
+        return UIColor { _ -> UIColor in
+            return #colorLiteral(red: 0.1137254902, green: 0.1568627451, blue: 0.2509803922, alpha: 1)
+        }
+    }()
+    
     static var FETextGreen: UIColor = {
         return UIColor { (traitCollection) -> UIColor in
             if traitCollection.userInterfaceStyle == .dark{

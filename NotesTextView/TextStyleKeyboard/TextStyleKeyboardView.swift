@@ -47,7 +47,8 @@ class TextStyleKeyboardView: UIView{
         TransformedColor(visualColor: UIColor.systemRed, appliedColor: UIColor.FETextRed),
         TransformedColor(visualColor: UIColor.systemOrange, appliedColor: UIColor.FETextOrange),
         TransformedColor(visualColor: UIColor.systemGreen, appliedColor: UIColor.FETextGreen),
-        TransformedColor(visualColor: UIColor.systemBlue, appliedColor: UIColor.FETextBlue)
+        TransformedColor(visualColor: UIColor.systemBlue, appliedColor: UIColor.FETextBlue),
+        TransformedColor(visualColor: UIColor.FETextEmailBlue, appliedColor: UIColor.FETextEmailBlue)
     ]
     
     let highlightColorMap: [TransformedColor] = [
@@ -374,9 +375,10 @@ class TextStyleKeyboardView: UIView{
         colorSegmentControl.constrainHeight(constant: buttonHeight)
         colorSegmentControl.constrainWidth(constant: 105)
         
-        //setup Text Color Picker
+        // setup Text Color Picker
         textColorPicker.colorChoices = textColors
-        if let firstColor = textColors.first{
+        // default color is FETextEmailBlue
+        if let firstColor = textColors.first(where: { $0 == UIColor.FETextEmailBlue }) {
             textColorPicker.selectedColor = firstColor
         }
         
